@@ -7,3 +7,6 @@ function openContactForm() {
 function closeContactForm() {
     document.getElementById('contactForm').style.display = 'none';
 }
+
+
+
