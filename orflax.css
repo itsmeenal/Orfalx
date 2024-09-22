@@ -25,6 +25,25 @@ header .logo h1 {
     display: inline;
 }
 
+.center-quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-quote h1 {
+    font-size: 1.5rem;
+    color: rgb(239, 197, 243);
+    margin: 0;
+}
+
+
+
 .hamburger {
     font-size: 30px;
     cursor: pointer;
@@ -79,20 +98,22 @@ header .logo h1 {
 }
 
 .hero-content h2 {
-    font-size: 3em;
+    font-size: 4em; /* Increased size */
+    font-weight: bold;
 }
 
 .hero-content p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 2em; /* Increased size */
+    margin-bottom: 30px;
 }
 
+
 .btn-primary, .btn-secondary {
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
+    padding: 15px 30px; /* Increase padding */
+    font-size: 1.5em; /* Increase font size */
+    border-radius: 8px; /* Slightly larger border-radius for emphasis */
 }
+
 
 .btn-primary {
     background-color: #DA70D6; /* Orchid */
@@ -105,16 +126,17 @@ header .logo h1 {
 }
 
 /* About Section */
+
 .about-section {
     padding: 40px;
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .about-section h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #6A0DAD; /* Dark Purple */
+    color: #ecd2ff; /* Dark Purple */
 }
 
 .about-section p {
@@ -243,7 +265,8 @@ footer {
     background-image: url('bg.png'); /* Replace with your image */
     background-size: cover;
     background-position: center;
- 
+    filter: blur(8px); /* Reduced blur intensity */
+    opacity: 0.8; /* Increased opacity to make the image more visible */
     z-index: -1;
     transform: translateY(10px);
     transition: transform 0.5s ease-out;
@@ -301,10 +324,9 @@ header {
     background-color: #6a0dad; /* Purple shade for header background */
     color: white;
 }
-
 .hero {
     position: relative; /* Allow absolute positioning for the ::before element */
-    background: linear-gradient(rgba(171, 105, 219, 0.8), rgba(202, 103, 227, 0.8)), url('your-image-url-here.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(171, 105, 219, 0.8), rgba(202, 103, 227, 0.8)), url('image.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -320,33 +342,494 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('herobg.png'); /* Add your background image */
+    background-image: url('image.png'); /* Add your background image */
     background-size: cover; /* Cover the entire section */
     background-position: center; /* Center the image */
-    
-    
+    filter: blur(8px); /* Add blur effect */
+    opacity: 0.7; /* Adjust opacity for visibility */
     z-index: -1; /* Position behind the text */
 }
 
 .hero-content {
     position: relative; /* Ensure text is above the background */
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+
+/* Contact Now Button */
+.contact-now {
+    position: absolute;
+    top: 20px;
+    right: 80px; /* Adjust to fit next to the hamburger */
+}
+
+.contact-button {
     background-color: #6a0dad;
+    color: white;
+    padding: 15px 30px; /* Increased padding for larger button */
+    border: none;
+    border-radius: 8px; /* Slightly rounded edges */
+    cursor: pointer;
+    font-size: 1.5em; /* Increase font size */
+}
+
+
+/* Floating Contact Form */
+.contact-form {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form .form-container {
     position: relative;
 }
 
-.tagline {
-    font-size: 2rem;
-    color: #fbd9ff;
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Close Button */
+.close-form {
     position: absolute;
-    bottom: 20px; /* Adjust as needed */
-    left: 50%;
-    transform: translateX(-50%);
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.video-section {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Adjust to fit your design */
+    text-align: center;
+}
+
+.video-title {
+    position: absolute; /* Change to absolute */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for true centering */
+    z-index: 1;
+    color: white; /* Change as needed */
+    font-size: 2em; /* Adjust size as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: adds contrast */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+}
+
+.hero {
+    position: relative; /* Make sure the hero is relative */
+    background: linear-gradient(rgba(171, 105, 219, 0.5), rgba(202, 103, 227, 0.5)), url('image.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* General styling for body */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #9342ac;
+    line-height: 1.6;
+    background-color: #aa82c7;
+}
+/* About Section with Background Image */
+.about-section {
+    padding: 60px 20px;
+    background: url('aboutt.png') no-repeat center center/cover; /* Background image */
+    position: relative; /* Required for overlay and content layering */
+    text-align: center;
+    color: white; /* Ensure text stands out */
+    overflow: hidden; /* Avoid overflow of the background */
+}
+
+/* Blur effect on the background image */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Use the same background image */
+    filter: blur(8px); /* Apply blur effect */
+    z-index: 0; /* Make sure the blur is behind the content */
+}
+
+/* Dark overlay to improve text readability */
+.about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure it is behind the text but above the blurred image */
+}
+
+/* Content inside the section */
+.about-section h2, .about-horizontal-box {
+    position: relative;
+    z-index: 2; /* Ensure content appears above the overlay */
+}
+
+/* Styling for the "Who Are We?" text */
+.about-section h2 {
+    font-size: 3em;
+    color: white; /* Ensure the heading is visible on top of the overlay */
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #8d45ec; /* Adjust the color as needed */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Adds space between the sections */
+  }
+  
+  .text-box {
+    background-color: #4d14b6; /* Light purple background */
+    padding: 20px;
+    max-width: 800px; /* Adjust width as necessary */
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+/* Horizontal Box Styling */
+.about-horizontal-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Lighten the box background for better readability */
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    animation: fadeIn 1s ease-out;
+    transition: transform 0.3s;
+    z-index: 2; /* Ensure the box appears above the overlay */
+    color: #333; /* Ensure text inside the box is readable */
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.about-section {
+    position: relative;
+    padding: 50px;
+    text-align: center;
+    color: #f6f1f1;
+    z-index: 1;
+}
+
+.who-are-we-box {
+    background-color: rgba(244, 238, 247, 0.8); /* Semi-transparent white background for the box */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.who-are-we-box h1 {
+    color: #6A0DAD; /* Match this color to the header */
+    font-size: 36px;
+    margin: 0;
+}
+
+.about-section p {
+    color: #6A0DAD; /* Purple text to match the header */
+    font-size: 18px;
+    position: relative;
+    z-index: 2; /* Keep the text on top */
+}
+/* Layout for the vertical boxes with image */
+.about-content {
+    display: flex;
+    flex-direction: row; /* Arrange boxes in a row */
+    justify-content: space-around; /* Space between boxes and images */
+    align-items: flex-start; /* Align items at the top */
+    gap: 30px; /* Space between boxes */
+}
+
+/* Vertical Box Styling */
+.about-box {
+    width: 75%; /* Increase width to make boxes larger */
+    min-height: 400px; 
+    background-color: rgba(105, 6, 105, 0.6); /* Semi-transparent background */
+    padding: 30px; /* Increase padding for larger boxes */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    animation: slideUp 1s ease-out;
+    transition: transform 0.3s;
+}
+
+/* Image Box Styling */
+.image-box {
+    width: 45%; /* Set width for image box */
+    min-height: 400px;
+    display: flex; /* Flex for centering image */
+    justify-content: center; /* Center the image */
+    align-items: center; /* Align image vertically */
+}
+
+.about-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners for images */
+}
+
+
+/* Content Box Styling */
+.content-container {
+    position: relative; /* Keeps the boxes on top of the background image */
+    z-index: 1; /* Ensures content is above the background image */
+}
+
+/* Horizontal Box Styling */
+.horizontal-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for boxes */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Vertical Boxes Styling */
+.vertical-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.vertical-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure Text is Readable */
+.about-section h2, .about-section p {
+    color: #4a1174;/* Adjust text color for readability */
+}
+
+
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: #37024e;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 40px;
     font-weight: bold;
 }
 
+/* Horizontal Box Styling */
+.about-horizontal-box {
+    background-color: var(--accent-color);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    animation: fadeIn 1s ease-out;
+    transition: transform 0.3s;
+}
+
+/* Layout for the vertical boxes */
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.about-box {
+    flex: 1 1 45%; /* Adjusts the width to take up around half the container */
+    background-color: var(--accent-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideUp 1s ease-out;
+    transition: transform 0.3s;
+
+     /* Center content vertically and horizontally */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center; /* Center the text */
+}
+/* Styling for text inside about-box */
+.about-box p {
+    font-size: 1.2em; /* Increase font size */
+    color: #87189a; /* White text for better contrast */
+    line-height: 1.8; /* Adjust line spacing for readability */
+}
+/* Hover effect */
+.about-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Motion effect */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In effect for horizontal box */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Blank Section */
+.blank-section {
+    height: 100px; /* Adjust the height as needed */
+    background-color: #37024e; /* Or any other background color you prefer */
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/*director page*/
+.director-profile {
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+    align-items: stretch; /* Stretch items to fill the space */
+    margin-bottom: 40px;
+}
+
+.director-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between messages */
+}
+
+.director-message.reverse {
+    flex-direction: row-reverse; /* Reverse the order for the second message */
+}
+
+.director-photo-placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: #d9d9d9; /* Placeholder color */
+    border-radius: 0; /* Square shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px; /* Space around the image */
+}
+
+.director-photo-placeholder img {
+    width: 100%;
+    height: 100%; /* Ensure it fills the placeholder */
+    object-fit: cover; /* Cover the area without stretching */
+    border-radius: 0; /* Keep it square */
+}
+
+.director-message blockquote {
+    font-size: 1.5rem;
+    color: #555;
+    font-style: italic;
+    padding-left: 20px;
+    border-left: 5px solid #7f34b5;
+}
+
+.director-message .director-name {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7f34b5;
+}
+
+.director-box .btn-primary {
+    background-color: #7f34b5;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.director-box .btn-primary:hover {
+    background-color: #5b2493;
+}
